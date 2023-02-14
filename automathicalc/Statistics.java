@@ -1,9 +1,9 @@
-package automathicalc;
-
 /**The class Statistics contains methods for measuring the values in sets of data.
  * @version 0.001
  * @author Daniel Hassanieh
  */
+package automathicalc;
+
 public class Statistics
 {
 

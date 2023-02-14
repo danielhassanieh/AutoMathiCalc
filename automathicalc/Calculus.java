@@ -1,5 +1,6 @@
 package automathicalc;
 
-public class Calculus {
+public class Calculus
+{
     
 }
