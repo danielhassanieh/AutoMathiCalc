@@ -1,4 +1,5 @@
-/**The class Statistics contains methods for measuring the values in sets of data.
+/**
+ * The class Statistics contains methods for measuring the values in a data set.
  * @version 0.001
  * @author Daniel Hassanieh
  */
@@ -7,7 +8,8 @@ package automathicalc;
 public class Statistics
 {
 
-  /**Returns the mean of numbers in an array.
+  /**
+   * Returns the mean of numbers in an array.
    * @param nums : The array of doubles to find the mean of.
    * @return the mean of nums.
    */
@@ -20,7 +22,8 @@ public class Statistics
     return total / nums.length;
   }
 
-  /**Returns the median of numbers in an array.
+  /**
+   * Returns the median of numbers in an array.
    * @param nums : an array of doubles to find the median of.
    * @param isSorted : sorts nums if false.
    * @return the median of nums.
@@ -38,7 +41,8 @@ public class Statistics
     return median;    
   }
 
-  /**Returns the value that appears the most often in an array of doubles.
+  /**
+   * Returns the value that appears the most often in an array of doubles.
    * @param nums : an array of doubles to find the mode of.
    * @return the mode of nums.
    */
@@ -49,7 +53,8 @@ public class Statistics
     return 0;
   } */
   
-  /**Returns unique numbers in an array.
+  /**
+   * Returns unique numbers in an array.
    * @param nums array of numbers
    * @return the unique numbers in the array.
    */
@@ -84,7 +89,8 @@ public class Statistics
     return uniqueNums;
   }
 
-  /**Returns the largest value in an array of doubles.
+  /**
+   * Returns the largest value in an array of doubles.
    * @param nums : The array of doubles to find the largest value in.
    * @return the largest value in the array.
    */
@@ -95,7 +101,8 @@ public class Statistics
     return min;
   }
 
-  /**Returns the smallest value in an array of doubles.
+  /**
+   * Returns the smallest value in an array of doubles.
    * @param nums : The array of doubles to find the smallest value in.
    * @return the smallest value in the array.
    */
@@ -106,7 +113,48 @@ public class Statistics
     return max;
   }
 
-  /**Returns numbers in an array sorted least to greatest.
+  /**
+   * Returns the index
+   * @param nums
+   * @param key
+   * @return
+   */
+  public static double linearSearch(double[] nums, double key)
+  {
+    for(int index = 0; index < nums.length; index++)
+    {
+      if(nums[index] == key)
+        return index;
+    }
+    return -1;
+  }
+
+  public static int binarySearch(double[] nums, double key)
+  {
+    int lowerBound = 0;
+    int upperBound = nums.length;
+    while(lowerBound <= upperBound)
+    {
+      // midpoint between the lower bound and the upper bound
+      int midpoint = (lowerBound + upperBound) / 2;
+      // if num at the midpoint is the key, returns the index of midpoint
+      if(nums[midpoint] == key)
+        return midpoint;
+      else
+      {
+        // if num at the midpoint is greater than the key, the upper bound becomes the midpoint minus one
+        if(nums[midpoint] > key)
+          upperBound = midpoint - 1;
+        // otherwise, the lower bound becomes the midpoint plus one
+        else
+          lowerBound = midpoint + 1;
+      }
+    }
+    return -1;
+  }
+
+  /**
+   * Returns numbers in an array sorted least to greatest.
    * @param nums : The array of numbers to be sorted.
    * @return a sorted array from least to greatest.
    */
@@ -132,7 +180,8 @@ public class Statistics
     return sortedNums;
   }
   
-  /**Returns the number of times a value is found in array of doubles.
+  /**
+   * Returns the number of times a value is found in array of doubles.
    * @param nums : An array of doubles for a value to be counted in.
    * @param find : The value to be counted.
    * @return the number of times that a specific value is counted.
@@ -144,7 +193,8 @@ public class Statistics
     return count;
   }
   
-  /**Returns the number of times each value is found in an array of doubles with a two-dimensional array.
+  /**
+   * Returns the number of times each value is found in an array of doubles with a two-dimensional array.
    * @param nums: An array of doubles for each value to be counted.
    * @return the number of times each value is counted, with the second index in each array being the count of the value in the first index.
    */
