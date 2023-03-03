@@ -43,6 +43,48 @@ public class Statistics
     return median;    
   }
 
+  /**
+   * Returns the index of a num in an array
+   * @param nums : array of doubles
+   * @param key : num to look for
+   * @return index of key in array.
+   * @return -1 if key not fond
+   */
+  public static double linearSearch(double[] nums, double key)
+  {
+    for(int index = 0; index < nums.length; index++)
+    {
+      if(nums[index] == key)
+        return index;
+    }
+    return -1;
+  }
+
+  public static int binarySearch(double[] nums, double key)
+  {
+    int lowerBound = 0;
+    int upperBound = nums.length;
+    while(lowerBound <= upperBound)
+    {
+      // midpoint between the lower bound and the upper bound
+      int midpoint = (lowerBound + upperBound) / 2;
+      // if num at the midpoint is the key, returns the index of midpoint
+      if(nums[midpoint] == key)
+        return midpoint;
+      else
+      {
+        // if num at the midpoint is greater than the key, the upper bound becomes the midpoint minus one
+        if(nums[midpoint] > key)
+          upperBound = midpoint - 1;
+        // otherwise, the lower bound becomes the midpoint plus one
+        else
+          lowerBound = midpoint + 1;
+      }
+    }
+    // if the key was not found, returns -1
+    return -1;
+  }
+
   /**Returns the value that appears the most often in an array of doubles.
    * @param nums : an array of doubles to find the mode of.
    * @return the mode of nums.
