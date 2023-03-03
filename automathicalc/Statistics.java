@@ -1,4 +1,5 @@
-/**The class Statistics contains methods for measuring the values in sets of data.
+/**
+ * The class Statistics contains methods for measuring the values in sets of data.
  * @version 0.001
  * @author Dani Hassanieh
  */
@@ -7,7 +8,8 @@ package automathicalc;
 public class Statistics
 {
 
-  /**Returns the mean of numbers in an array.
+  /**
+   * Returns the mean of numbers in an array.
    * @param nums : The array of doubles to find the mean of.
    * @return the mean of nums.
    */
@@ -27,9 +29,9 @@ public class Statistics
     return nums[0] + getSum(copyOfRange(nums, 1, nums.length));
   }
 
-  /**Returns the median of numbers in an array.
-   * @param nums : an array of doubles to find the median of.
-   * @param isSorted : sorts nums if false.
+  /**
+   * Returns the median of numbers in an array.
+   * @param nums : array of doubles
    * @return the median of nums.
    */
   public static double getMedian(double[] nums)
@@ -44,22 +46,30 @@ public class Statistics
   }
 
   /**
-   * Returns the index of a num in an array
+   * Returns the index of a num in an array using a linear search.
    * @param nums : array of doubles
-   * @param key : num to look for
+   * @param key : to look for
    * @return index of key in array.
-   * @return -1 if key not fond
+   * @return -1 if key not found.
    */
   public static double linearSearch(double[] nums, double key)
   {
+    // iterate through nums
     for(int index = 0; index < nums.length; index++)
     {
+      // returns index of key in nums if num equals key
       if(nums[index] == key)
         return index;
     }
+    // returns -1 if key doesn't exist in nums
     return -1;
   }
 
+  /**
+   * Returns the index of a num in an array using a binary search.
+   * @param nums : array of doubles
+   * @param key : num to look for
+   */
   public static int binarySearch(double[] nums, double key)
   {
     int lowerBound = 0;
@@ -153,7 +163,8 @@ public class Statistics
     return max;
   }
 
-  /**Returns an array in ascending order using bubble sort.
+  /**
+   * Returns an array in ascending order using bubble sort.
    * @param nums : array of doubles
    * @return sorted array
    */
