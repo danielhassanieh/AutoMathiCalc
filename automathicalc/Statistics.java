@@ -10,21 +10,21 @@ public class Statistics
 
   /**
    * Returns the mean of numbers in an array.
-   * @param nums : The array of doubles to find the mean of.
-   * @return the mean of nums.
+   * @param nums : array of doubles
+   * @return mean of nums
    */
   public static double getMean(double[] nums)
   {
     double total = 0.0;
-    // adds all of the doubles together
+    // adds all nums in array together
     for(double num : nums) total += num;
-    // divides the sum by the length of the array and returns the mean
+    // divides sum of nums by array length, returns mean
     return total / nums.length;
   }
 
   /**
    * Returns the median of numbers in an array.
-   * @param nums : an array of doubles to find the median of.
+   * @param nums : array of doubles
    * @param isSorted : sorts nums if false.
    * @return the median of nums.
    */
@@ -114,10 +114,11 @@ public class Statistics
   }
 
   /**
-   * Returns the index
-   * @param nums
-   * @param key
-   * @return
+   * Returns the index of a num in an array
+   * @param nums : array of doubles
+   * @param key : num to look for
+   * @return index of key in array.
+   * @return -1 if key not fond
    */
   public static double linearSearch(double[] nums, double key)
   {
@@ -150,6 +151,7 @@ public class Statistics
           lowerBound = midpoint + 1;
       }
     }
+    // if the key was not found, returns -1
     return -1;
   }
 
