@@ -1,1 +1,1 @@
-# automatic-mathematical-calculations-java
+# AutoMathiCalc
