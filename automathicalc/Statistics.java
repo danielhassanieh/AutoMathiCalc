@@ -54,7 +54,7 @@ public class Statistics
    */
   public static double linearSearch(double[] nums, double key)
   {
-    // iterate through nums
+    // iterate over nums
     for(int index = 0; index < nums.length; index++)
     {
       // returns index of key in nums if num equals key
